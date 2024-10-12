@@ -1,12 +1,9 @@
-import express from "express"
-const app = express()
+import router from "./routes/todos.js"; // No need to import "proppatch"
+import express from "express";
+const app = express();
 
-const port = 3000;
+const port = 5500;
 
-app.get("/", (req, res) => {
-    res.send("Hello Todo App!!!");
-  });
+app.use('/api', router);
 
-  app.listen(port, () => {
-    console.log(`Listening to port ${port}`);
-  });
+app.listen(port, () => console.log(`Server running on port ${port}`));
