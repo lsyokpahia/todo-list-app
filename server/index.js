@@ -5,7 +5,7 @@ import router from "./routes/todos.js";
 import usersRouter from "./routes/users.js";
 
 const app = express();
-const port = 5500;
+const port = 3000;
 
 // Use body-parser middleware before routes
 app.use(express.urlencoded({ extended: true }));

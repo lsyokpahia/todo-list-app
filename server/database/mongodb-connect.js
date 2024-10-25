@@ -1,13 +1,14 @@
 import mongoose from "mongoose";
 
 export default function connect() {
-    const database = "mongodb+srv://lsjardeleza:anOBvR1CmHEfWbPT@todocluster.byzxn.mongodb.net/?retryWrites=true&w=majority&appName=TodoCluster";
+    const database = "mongodb+srv://lsjardeleza:0UFtIBQ5QEyEqXFY@todocluster.byzxn.mongodb.net/?retryWrites=true&w=majority&appName=TodoCluster";
+
     mongoose
     .connect(database)
-    .then(() => {
+      .then(() => {
         console.log("Connected to database");
-    })
-    .catch((error) => {
+      })
+      .catch((error) => {
         console.log(error);
-    });
-}
+      });
+  }
