@@ -1,0 +1,267 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+}
+
+/* Navigation Styling */
+.navigation {
+    width: 100%;
+    background-color:#ef9ed7;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+.navigation a:hover {
+    text-decoration: underline;
+}
+
+/* Centered Container for the Login Page */
+.login-container {
+    width: 300px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 50px; /* Add margin to push it down from the nav bar */
+}
+
+/* Heading Styling */
+h2, h3 {
+    color: #d783be;
+    margin-bottom: 20px;
+}
+
+/* Form Label Styling */
+label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+/* Input Fields Styling */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+/* Button Styling */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ef9ed7;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #d783be;
+}
+
+/* Home Container Styling */
+.home-container {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    width: 60%;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Heading Style */
+.home-container h1 {
+    color: #ef9ed7;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.home-container p {
+    color: #555;
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+/* To-Do List Container */
+.todo-container {
+    width: 80%;
+    max-width: 600px;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: left;
+}
+
+/* To-Do List Container */
+.todo-container {
+    width: 80%;
+    max-width: 600px;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: left;
+}
+
+/* To-Do List Styling */
+.todo-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.todo-list li {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fafafa;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* Hover effect for each task item */
+.todo-list li:hover {
+    background-color: #f0e6f6; /* Light purple for hover effect */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.todo-list input[type="checkbox"] {
+    margin-right: 15px;
+}
+
+.todo-list label {
+    font-size: 1.1em;
+    color: #333;
+}
+
+/* Adjust spacing for checkbox and label */
+.todo-list li label {
+    flex: 1;
+}
+
+/* Edit Container Styling (similar to Login Container) */
+.edit-container {
+    width: 300px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Form Label Styling */
+label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+/* Input Fields Styling */
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+/* Button Styling */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ef9ed7;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #d783be;
+}
+
+/* Error Container Styling (similar to Login and Edit Containers) */
+.error-container {
+    width: 300px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.error-container h2 {
+    color: #ef9ed7; /* Matches the pink theme */
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.error-container p {
+    color: #555;
+    font-size: 1em;
+}
+
+/* Remove bullet points from task list */
+#taskList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#taskList li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 8px;
+}
+
+#taskList li span {
+    flex-grow: 1;
+}
+
+/* Style for delete button in the task list */
+#taskList button {
+    background-color: #ef9ed7;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#taskList button:hover {
+    background-color: #d783be;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navigation">
+        <a href="/">Home</a> 
+        <a href="login.html">Log In</a> 
+        <a href="todolist.html">Todo List</a> 
+        <a href="edittodo.html">Edit Todo</a>
+    </nav>
+    <div class="todo-container">
+        <h2>Your To-Do List</h2>
+        <ul class="todo-list" id="todoList"></ul>
+    </div>
+
+    <script>
+        // Function to load tasks from local storage and display them
+        function loadTasks() {
+            const taskList = document.getElementById("todoList");
+            taskList.innerHTML = ""; // Clear existing list items
+            const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+            tasks.forEach((task, index) => {
+                const li = document.createElement("li");
+                li.innerHTML = `
+                    <input type="checkbox" id="task${index}">
+                    <label for="task${index}">${task}</label>
+                `;
+                taskList.appendChild(li);
+            });
+        }
+
+        // Load tasks when the page loads
+        document.addEventListener("DOMContentLoaded", loadTasks);
+    </script>
+</body>
+</html>

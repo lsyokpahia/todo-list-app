@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit To-Do</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navigation">
+        <a href="/">Home</a> 
+        <a href="login.html">Log In</a> 
+        <a href="todolist.html">Todo List</a> 
+        <a href="edittodo.html">Edit Todo</a>
+    </nav>
+    <div class="edit-container">
+        <h2>Edit To-Do</h2>
+        
+        <!-- Form to add new task -->
+        <form id="editForm">
+            <label for="todo">Add New Task:</label>
+            <input type="text" id="todo" name="todo" placeholder="Enter a new task">
+            <button type="submit">Add Task</button>
+        </form>
+
+        <!-- Display existing tasks with delete option -->
+        <h3>Existing Tasks</h3>
+        <ul id="taskList"></ul>
+    </div>
+
+    <script>
+        // Function to load tasks from local storage and display them with delete options
+        function loadTasks() {
+            const taskList = document.getElementById("taskList");
+            taskList.innerHTML = ""; // Clear existing list items
+            const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+            tasks.forEach((task, index) => {
+                const li = document.createElement("li");
+                li.innerHTML = `
+                    <span>${task}</span>
+                    <button onclick="deleteTask(${index})">Delete</button>
+                `;
+                taskList.appendChild(li);
+            });
+        }
+
+        // Function to delete a specific task by index
+        function deleteTask(index) {
+            let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+            tasks.splice(index, 1); // Remove the task at the specified index
+            localStorage.setItem("tasks", JSON.stringify(tasks)); // Update local storage
+            loadTasks(); // Reload the task list
+        }
+
+        // Function to add a new task
+        document.getElementById("editForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const newTask = document.getElementById("todo").value;
+            if (newTask.trim() === "") {
+                alert("Task cannot be empty.");
+                return;
+            }
+
+            // Retrieve existing tasks from local storage, or initialize as an empty array if none exist
+            let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+            tasks.push(newTask); // Add the new task to the array
+
+            // Save the updated tasks array back to local storage
+            localStorage.setItem("tasks", JSON.stringify(tasks));
+
+            // Clear input field and reload the task list
+            document.getElementById("todo").value = "";
+            loadTasks();
+        });
+
+        // Load tasks when the page loads
+        document.addEventListener("DOMContentLoaded", loadTasks);
+    </script>
+</body>
+</html>
